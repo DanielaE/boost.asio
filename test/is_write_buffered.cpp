@@ -87,6 +87,8 @@ public:
   }
 
 private:
+  test_stream &operator=(const test_stream&);
+
   io_service_type& io_service_;
 };
 

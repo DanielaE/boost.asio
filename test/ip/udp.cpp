@@ -80,7 +80,7 @@ void test()
     ip::udp::socket socket4(ios, ip::udp::endpoint(ip::udp::v4(), 0));
     ip::udp::socket socket5(ios, ip::udp::endpoint(ip::udp::v6(), 0));
 #if !defined(BOOST_ASIO_WINDOWS_RUNTIME)
-    int native_socket1 = ::socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
+    intptr_t native_socket1 = ::socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
     ip::udp::socket socket6(ios, ip::udp::v4(), native_socket1);
 #endif // !defined(BOOST_ASIO_WINDOWS_RUNTIME)
 
@@ -116,9 +116,9 @@ void test()
     socket1.open(ip::udp::v6(), ec);
 
 #if !defined(BOOST_ASIO_WINDOWS_RUNTIME)
-    int native_socket2 = ::socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
+    intptr_t native_socket2 = ::socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
     socket1.assign(ip::udp::v4(), native_socket2);
-    int native_socket3 = ::socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
+    intptr_t native_socket3 = ::socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
     socket1.assign(ip::udp::v4(), native_socket3, ec);
 #endif // !defined(BOOST_ASIO_WINDOWS_RUNTIME)
 

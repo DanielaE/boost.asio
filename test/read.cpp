@@ -122,6 +122,8 @@ public:
   }
 
 private:
+  test_stream &operator=(const test_stream&);
+
   io_service_type& io_service_;
   enum { max_length = 8192 };
   char data_[max_length];

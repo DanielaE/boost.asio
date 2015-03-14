@@ -118,6 +118,8 @@ public:
   }
 
 private:
+  test_random_access_device &operator=(const test_random_access_device&);
+
   io_service_type& io_service_;
   enum { max_length = 8192 };
   char data_[max_length];
