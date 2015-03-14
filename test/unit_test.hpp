@@ -101,6 +101,7 @@ using boost::unit_test::test_suite;
 
 #if defined(BOOST_ASIO_MSVC)
 # pragma warning (pop)
+# pragma warning (disable:4996)
 #endif // defined(BOOST_ASIO_MSVC)
 
 inline void null_test()
