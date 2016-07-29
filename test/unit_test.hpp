@@ -172,6 +172,7 @@ int test_main(int, char**)
 
 #if defined(BOOST_ASIO_MSVC)
 # pragma warning (pop)
+# pragma warning (disable:4996)
 #endif // defined(BOOST_ASIO_MSVC)
 
 #endif // UNIT_TEST_HPP
