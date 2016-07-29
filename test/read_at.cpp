@@ -111,7 +111,7 @@ public:
       const Mutable_Buffers& buffers)
   {
     return boost::asio::buffer_copy(buffers,
-        boost::asio::buffer(data_, length_) + offset,
+        boost::asio::buffer(data_, length_) + static_cast<size_t>(offset),
         next_read_length_);
   }
 
