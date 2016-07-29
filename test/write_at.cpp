@@ -96,7 +96,7 @@ public:
       const Const_Buffers& buffers)
   {
     return boost::asio::buffer_copy(
-        boost::asio::buffer(data_, length_) + offset,
+        boost::asio::buffer(data_, length_) + static_cast<size_t>(offset),
         buffers, next_write_length_);
   }
 
