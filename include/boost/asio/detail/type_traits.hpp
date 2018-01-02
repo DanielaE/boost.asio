@@ -54,7 +54,14 @@ using std::is_function;
 using std::is_same;
 using std::remove_pointer;
 using std::remove_reference;
+#if defined(_MSVC_LANG) && _MSVC_LANG > 201402
+#pragma warning(push)
+#pragma warning(disable:4996)
+#endif
 using std::result_of;
+#if defined(_MSVC_LANG) && _MSVC_LANG > 201402
+#pragma warning(pop)
+#endif
 using std::true_type;
 #else // defined(BOOST_ASIO_HAS_STD_TYPE_TRAITS)
 using boost::add_const;
